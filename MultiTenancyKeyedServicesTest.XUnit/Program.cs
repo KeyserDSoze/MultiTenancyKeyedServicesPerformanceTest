@@ -25,7 +25,7 @@ namespace MultiTenancyKeyedServicesTest.XUnit
 
         protected override Type? TypeToChooseTheRightAssemblyWithControllersToMap => typeof(TesterController);
         [Benchmark]
-        protected override IServiceCollection ConfigureCientServices(IServiceCollection services)
+        protected override IServiceCollection ConfigureClientServices(IServiceCollection services)
         {
             services.AddHttpClient("client", x =>
             {
@@ -42,7 +42,7 @@ namespace MultiTenancyKeyedServicesTest.XUnit
             return ValueTask.CompletedTask;
         }
         [Benchmark]
-        protected override ValueTask ConfigureServerMiddlewaresAsync(IApplicationBuilder applicationBuilder, IServiceProvider serviceProvider)
+        protected override ValueTask ConfigureServerMiddlewareAsync(IApplicationBuilder applicationBuilder, IServiceProvider serviceProvider)
         {
             applicationBuilder.UseTestMiddlewares();
             return ValueTask.CompletedTask;
