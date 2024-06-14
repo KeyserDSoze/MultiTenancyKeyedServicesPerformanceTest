@@ -1,0 +1,6 @@
+@MultiTenancyKeyedServicesTest_HostAddress = http://localhost:5084
+
+GET {{MultiTenancyKeyedServicesTest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

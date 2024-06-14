@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.34909.67
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTenancyKeyedServicesTest", "MultiTenancyKeyedServicesTest\MultiTenancyKeyedServicesTest.csproj", "{CC46461A-DAB9-4C66-A169-A1A0521582C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MultiTenancyKeyedServicesTest.XUnit", "MultiTenancyKeyedServicesTest.XUnit\MultiTenancyKeyedServicesTest.XUnit.csproj", "{F03292AD-FC49-46CA-A7B6-537315A47398}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CC46461A-DAB9-4C66-A169-A1A0521582C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC46461A-DAB9-4C66-A169-A1A0521582C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC46461A-DAB9-4C66-A169-A1A0521582C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC46461A-DAB9-4C66-A169-A1A0521582C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F03292AD-FC49-46CA-A7B6-537315A47398}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F03292AD-FC49-46CA-A7B6-537315A47398}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F03292AD-FC49-46CA-A7B6-537315A47398}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F03292AD-FC49-46CA-A7B6-537315A47398}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C502C6C3-5EBD-4FF4-BD17-0B18A4028493}
+	EndGlobalSection
+EndGlobal
