@@ -1,4 +1,7 @@
-﻿using MultiTenancyKeyedServicesTest.Services;
+﻿using MultiTenancyKeyedServicesTest.Models;
+using MultiTenancyKeyedServicesTest.Services;
+using RepositoryFramework;
+using RepositoryFramework.InMemory;
 using System.Reflection;
 
 namespace MultiTenancyKeyedServicesTest.Extensions
@@ -29,6 +32,23 @@ namespace MultiTenancyKeyedServicesTest.Extensions
                     services.AddKeyedScoped(servicesToAdd[j], tenantId);
                 }
             }
+            services.AddRepository<SomeRepositoryModel, string>(repoBuilder =>
+            {
+                repoBuilder.WithInMemory(inMemoryBuilder =>
+                {
+                    inMemoryBuilder.PopulateWithRandomData();
+                }, "example");
+            });
+            services.AddActionAsFallbackWithServiceCollectionRebuilding<IRepository<SomeRepositoryModel, string>>(async fallbackBuilder =>
+            {
+                fallbackBuilder.Services.AddRepository<SomeRepositoryModel, string>(repoBuilder =>
+                {
+                    repoBuilder.WithInMemory(inMemoryBuilder =>
+                    {
+                        inMemoryBuilder.PopulateWithRandomData();
+                    }, fallbackBuilder.Name);
+                });
+            });
             return services;
         }
     }

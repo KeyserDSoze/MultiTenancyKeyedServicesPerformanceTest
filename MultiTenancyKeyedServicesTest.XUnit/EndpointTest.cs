@@ -42,5 +42,18 @@ namespace MultiTenancyKeyedServicesTest.XUnit
             Assert.NotNull(result.Starting);
             Assert.NotNull(result.Ending);
         }
+        [Benchmark]
+        [Fact]
+        public async Task CheckFactoryAsync()
+        {
+            for (var i = 0; i < 3; i++)
+            {
+                var tenantId = Guid.NewGuid().ToString("N");
+                var response = await _httpClient.GetAsync($"tester/CheckFactory?tenantId={tenantId}");
+                response.EnsureSuccessStatusCode();
+                var isOk = await response.Content.ReadFromJsonAsync<bool>();
+                Assert.True(isOk);
+            }
+        }
     }
 }

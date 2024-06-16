@@ -1,4 +1,4 @@
-using MultiTenancyKeyedServicesTest.Extensions;
+﻿using MultiTenancyKeyedServicesTest.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
